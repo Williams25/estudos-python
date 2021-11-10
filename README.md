@@ -1,7 +1,5 @@
 # Conceitos basicos de python
 
-- [curso](https://www.youtube.com/playlist?list=PLHz_AreHm4dk_nZHmxxf_J0WRAqy5Czye)
-
 ### Condições aninhadas
 
 - `emprestimo.py` Escreva um programa para aprovar o empréstimo bancário para a compra de uma casa. Pergunte o valor da casa, o salário do comprador e em quantos anos ele vai pagar. A prestação mensal não pode exceder 30% do salário ou então o empréstimo será negado.
@@ -647,3 +645,160 @@ for p in palavras:
 ```
 
 ### Listas
+
+- `numero_por_extenso.py` Faça um programa que leia 5 valores numéricos e guarde-os em uma lista. No final, mostre qual foi o maior e o menor valor digitado e as suas respectivas posições na lista.
+
+```py
+lista = []
+
+maior = 0
+menor = 0
+
+for index in range(0, 5):
+    lista.append(
+        int(input(f"Digite um numero na posicao {index}: "))
+    )
+    if index == 0:
+        maior = lista[index]
+        menor = lista[index]
+    else:
+        if lista[index] > maior:
+            maior = lista[index]
+        if lista[index] < menor:
+            menor = lista[index]
+
+print("-"*40)
+print(lista)
+print("-"*40)
+print(f"o maior valor encontrado foi {maior} na posicao ", end=" ")
+
+for index, valor in enumerate(lista):
+    if lista[index] == maior:
+        print(f"{index}", end=" ")
+
+print(f"\no menor valor encontrado foi {menor} na posicao ", end=" ")
+
+for index, valor in enumerate(lista):
+    if lista[index] == menor:
+        print(f"{index}", end=" ")
+```
+
+- `valores_unicos.py` Crie um programa onde o usuário possa digitar vários valores numéricos e cadastre-os em uma lista. Caso o número já exista lá dentro, ele não será adicionado. No final, serão exibidos todos os valores únicos digitados, em ordem crescente.
+
+```py
+lista = []
+
+while True:
+    num = int(input("digite um numero "))
+    resposta = str(input("quer continuar? [S/N] "))
+
+    if num not in lista:
+        lista.append(num)
+    else:
+        print("valor duplicado")
+    if resposta in "Nn":
+        break
+
+lista.sort()
+print(lista)
+```
+
+- `lista_ordenada.py` Crie um programa onde o usuário possa digitar cinco valores numéricos e cadastre-os em uma lista, já na posição correta de inserção (sem usar o sort()). No final, mostre a lista ordenada na tela.
+
+```py
+lista = []
+
+for i in range(0, 5):
+    num = int(input("digite um numero "))
+
+    if i == 0 or num > lista[-1]:
+        lista.append(num)
+    else:
+        pos = 0
+        while pos < len(lista):
+            if num <= lista[pos]:
+                lista.insert(pos, num)
+                break
+            pos += 1
+
+print("-"*30)
+print(f"lista ordenada {lista}")
+print("-"*30)
+```
+
+- `extraindo_dados.py` Crie um programa que vai ler vários números e colocar em uma lista. Depois disso, mostre:
+  - Quantos números foram digitados.
+  - A lista de valores, ordenada de forma decrescente.
+  - Se o valor 5 foi digitado e está ou não na lista.
+
+```py
+lista = []
+
+while True:
+    num = int(input("digite um numero "))
+    resposta = str(input("quer continuar? [S/N] "))
+
+    lista.append(num)
+
+    if resposta in "Nn":
+        break
+
+lista.sort(reverse=True)
+
+print("foram digitados {} numeros ".format(len(lista)))
+print(lista)
+
+if 5 not in lista:
+    print("o numero 5 não foi encontrado")
+else:
+    print("o numero 5 foi encontrado")
+```
+
+- `multiplas_listas.py` Crie um programa que vai ler vários números e colocar em uma lista. Depois disso, crie duas listas extras que vão conter apenas os valores pares e os valores ímpares digitados, respectivamente. Ao final, mostre o conteúdo das três listas geradas.
+
+```py
+lista = []
+pares = []
+impares = []
+
+while True:
+    num = int(input("digite um numero "))
+    resposta = str(input("quer continuar? [S/N] "))
+
+    lista.append(num)
+
+    if num % 2 == 0:
+        pares.append(num)
+    else:
+        impares.append(num)
+
+    if resposta in "Nn":
+        break
+
+print(f"Lista {lista}")
+print(f"Numeros pares {pares}")
+print(f"Numeros impares {impares}")
+```
+
+- `validando_expressoes.py` Crie um programa onde o usuário digite uma expressão qualquer que use parênteses. Seu aplicativo deverá analisar se a expressão passada está com os parênteses abertos e fechados na ordem correta.
+
+```py
+expr = str(input("digite uma espressao "))
+
+pilha = []
+
+for simbolo in expr:
+    if simbolo == "(":
+        pilha.append("(")
+    elif simbolo == ")":
+        if len(pilha) > 0:
+            pilha.pop()
+        else:
+            pilha.append(")")
+            break
+
+if len(pilha) == 0:
+    print("expressao correta")
+else:
+    print("expressao incorreta")
+```
