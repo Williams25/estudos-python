@@ -33,5 +33,5 @@ def downloadMp3(link: str, path: str) -> str:
 
 
 print(downloadVideo(
-    "https://www.youtube.com/watch?v=1Xq77Z9YRko",
-    "../../Área de Trabalho/nlw/aulas/expanse"))
+    "https://www.youtube.com/watch?v=FrRaxIH0R9o",
+    "../../Área de Trabalho/nlw/aulas/node"))
