@@ -4,3 +4,11 @@ class Address:
         self.city = city
         self.state = state
         self.country = country
+
+    def showAddress(self):
+        return {
+            "address": self.address,
+            "city": self.city,
+            "state": self.state,
+            "country": self.country
+        }
