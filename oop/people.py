@@ -14,10 +14,5 @@ class People(Address):
             'name': self.name,
             'age': self.age,
             'active': self.active,
-            'address': {
-                'address': self.address,
-                'city': self.city,
-                'state': self.state,
-                'country': self.country,
-            },
+            'address': self.showAddress()
         }
