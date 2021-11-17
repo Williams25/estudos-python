@@ -214,3 +214,19 @@ jogador = str(input("nome: "))
 gols = str(input("gols: "))
 Ficha().detalhes(jogador, gols)```
 ````
+
+- `validando_entrada.py` Crie um programa que tenha a função leiaInt(), que vai funcionar de forma semelhante 'a função input() do Python, só que fazendo a validação para aceitar apenas um valor numérico.
+  - Ex: n = leiaInt('Digite um n: ')
+
+```py
+def leiaInt():
+    while True:
+        value = input("Digite um numero: ")
+        if value.isnumeric():
+            break
+        else:
+            print("Somente numeros são validos")
+
+
+leiaInt()
+```
