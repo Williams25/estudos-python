@@ -145,3 +145,27 @@ sortear_somar = SortearSomar()
 sortear_somar.sortear()
 sortear_somar.somaPar(sortear_somar.lista)
 ```
+
+- `votacao.py` Crie um programa que tenha uma função chamada voto() que vai receber como parâmetro o ano de nascimento de uma pessoa, retornando um valor literal indicando se uma pessoa tem voto NEGADO, OPCIONAL e OBRIGATÓRIO nas eleições.
+
+```py
+from datetime import datetime
+
+
+class Eleicao:
+    def __init__(self):
+        self.ano_atual = datetime.now().year
+
+    def voto(self, ano=1910):
+        idade = self.ano_atual - ano
+
+        if idade >= 16 and idade < 18 or idade >= 65:
+            return "OPCIONAL"
+        elif idade < 16:
+            return "NEGADO"
+        elif idade > 18 and idade <= 64:
+            return "OBRIGATÓRIO"
+
+
+print(Eleicao().voto(1999))
+```
