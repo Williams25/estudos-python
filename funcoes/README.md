@@ -196,3 +196,21 @@ class Fatorial:
 n = Fatorial()
 print(n.fatorial(5, True))
 ```
+
+- `ficha_jogador.py` Faça um programa que tenha uma função chamada ficha(), que receba dois parâmetros opcionais: o nome de um jogador e quantos gols ele marcou. O programa deverá ser capaz de mostrar a ficha do jogador, mesmo que algum dado não tenha sido informado corretamente.
+
+````py
+class Ficha:
+
+    def detalhes(self, jogador="<desconhecido>", gols=0):
+        if len(jogador) == 0:
+            jogador = "<desconhecido>"
+        if len(gols) == 0:
+            gols = 0
+        print(f"O jogador {jogador} fez {gols} gol(s) no campeonato")
+
+
+jogador = str(input("nome: "))
+gols = str(input("gols: "))
+Ficha().detalhes(jogador, gols)```
+````
