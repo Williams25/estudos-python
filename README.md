@@ -7,3 +7,4 @@
 - [Dicionarios de dados `dicionarios_de_dados`](https://github.com/Williams25/estudos-python/tree/master/dicionarios_de_dados)
 - [Funções `funcoes`](https://github.com/Williams25/estudos-python/tree/master/funcoes)
 - [Modulos `modulos`](https://github.com/Williams25/estudos-python/tree/master/modulos)
+- [Tratamento de erros `tratamento_de_erros`](https://github.com/Williams25/estudos-python/tree/master/tratamento_de_erros)
