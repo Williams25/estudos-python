@@ -1,0 +1,3 @@
+import dado
+
+dado.start()
