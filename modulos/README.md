@@ -6,3 +6,4 @@
   - Modifique as funções que form criadas para que elas aceitem um parâmetro a mais, informando se o valor retornado por elas vai ser ou não formatado pela função moeda().
 
 - `utilidadesCeV` Crie um pacote chamado utilidadesCeV que tenha dois módulos internos chamados moeda e dado. Transfira todas as funções utilizadas nos desafios anteriores, para o primeiro pacote e mantenha tudo funcionando.
+  - Dentro do pacote utilidadesCeV que criamos, temos um módulo chamado dado. Crie uma função chamada leiaDinheiro() que seja capaz de funcionar como a função imputa(), mas com uma validação de dados para aceitar apenas valores que seja monetários.
