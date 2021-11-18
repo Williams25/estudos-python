@@ -1,19 +1,27 @@
-def aumentar(moeda=0, desconto=0):
+def aumentar(moeda=0, desconto=0, formatar=False):
     total = (desconto/100) * moeda
-    return formatar_moeda(total + moeda)
+    if formatar:
+        return formatar_moeda(total + moeda)
+    return total + moeda
 
 
-def diminuir(moeda=0, desconto=0):
+def diminuir(moeda=0, desconto=0, formatar=False):
     total = (desconto/100) * moeda
-    return formatar_moeda(moeda - total)
+    if formatar:
+        return formatar_moeda(moeda - total)
+    return moeda - total
 
 
-def dobro(moeda=0):
-    return formatar_moeda(moeda * 2)
+def dobro(moeda=0, formatar=False):
+    if formatar:
+        return formatar_moeda(moeda * 2)
+    return moeda * 2
 
 
-def metade(moeda=0):
-    return formatar_moeda(moeda / 2)
+def metade(moeda=0, formatar=False):
+    if formatar:
+        return formatar_moeda(moeda / 2)
+    return moeda / 2
 
 
 def formatar_moeda(preco=0, moeda="R$ "):
